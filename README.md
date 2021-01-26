@@ -17,3 +17,7 @@ data_store.upload(src_dir = "./training", target_path = 'udacity-project', overw
 Part 2
 train_data = Dataset.Tabular.from_delimited_files(path=data_store.path("udacity-project/train_data.csv"))
 # train=TabularDatasetFactory.from_delimited_files([(data_store, 'training/train_data.csv')])
+
+import joblib
+os.makedirs('outputs', exist_ok = True)
+joblib.dump(fitted_model, 'outputs/fitted_model.joblib')
